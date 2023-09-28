@@ -55,7 +55,7 @@ function createBubbleChart(sampleID) {
             marker: {
                 size: sampleValues,
                 color: otuIds,
-                colorscale: 'Viridis', // You can choose a different colorscale
+                colorscale: 'Viridis',
                 opacity: 0.5
             }
         };
@@ -72,7 +72,7 @@ function createBubbleChart(sampleID) {
     });
 }
 
-// Function to populate the dropdown menu
+// populate dropdown menu
 function populateDropdown() {
     // Load the JSON data
     d3.json(dataUrl).then(data => {
@@ -85,7 +85,7 @@ function populateDropdown() {
             dropdown.append("option").text(sample).property("value", sample);
         });
 
-        // Call the createBarChart and createBubbleChart functions with the default sample
+        // Call the createBarChart and createBubbleChart functions
         const defaultSample = sampleNames[0];
         createBarChart(defaultSample);
         createBubbleChart(defaultSample);
